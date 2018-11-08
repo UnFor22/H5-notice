@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+
+        }
+        .active {
+            width: 200px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <button>添加</button>
+    <button>移除</button>
+    <button>切换</button>
+    <button>是否存在</button>
+</body>
+<script>
+    function $(selector){
+        let doms = document.querySelectorAll(selector)
+        if(doms.length>1){
+            return doms
+        }
+        else {
+            return doms[0]
+        }
+    }
+    let btns = $('button')
+    btns[0].onclick = function (){
+        $('.box').classList.add('active')
+    }
+    btns[1].onclick = function (){
+        $('.box').classList.remove('active')
+    }
+    btns[2].onclick = function (){
+        $('.box').classList.toggle('active')
+    }
+    btns[3].onclick = function(){
+        let isActive = $('.box').classList.contains('active') ? 'you' :'meiyou'
+        alert(isActive)
+    }
+</script>
+</html>

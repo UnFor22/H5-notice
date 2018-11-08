@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        ul{
+            width: 456px;
+            height: 80px;
+        }
+        ul li {
+            float: left;
+            width: 150px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            color: #333;
+            list-style: none;
+            cursor: pointer;
+            border-left: 1px solid #000;
+            /* border-right: 1px solid #000; */
+        }
+        .active {
+            color: #409eff;
+        }
+        .isShow {
+            width: 500px;
+            height: 220px;
+            border: 1px solid #899;
+            display: block;
+        }
+        .box {
+            width: 500px;
+            height: 220px;
+            border: 1px solid #899;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>财经</li>
+        <li>天气</li>
+        <li>新闻</li>
+    </ul>
+    <section class="box">
+        <p>
+            “刷脸”走进无人超市，对着商品微笑就能打折；复杂的病症摸不着头脑，远程语音问诊帮你推荐就诊科室；来到智慧餐厅，只需扫码，就会有机器人端来饭菜……在浙江省桐乡市乌镇举办的第五届世界互联网大会上，各种新鲜科技成果让人感叹，数字经济已经深入社会生活的方方面面，悄然改变着人们的生活。
+        </p>
+    </section>
+    <section class="box">
+        <p>
+            “习近平主席在贺信中强调了加快数字经济发展、为世界经济发展增添新动能的迫切性，这让我们对于继续专注技术创新、坚持推动产业升级的道路充满信心。”百度创始人、董事长兼首席执行官李彦宏说。
+        </p>
+    </section>
+    <section class="box">
+        <p>
+            他说，百度的人工智能研究，已经率先在农业、制造业、汽车、零售等多个国民经济重要领域实现了应用。“我们有信心继续保持这一领先优势，为提升我国整体经济质量做出更多贡献。”
+        </p>
+    </section>
+</body>
+<script>
+    let lis = Array.from(document.querySelectorAll('li')) 
+    let boxs = Array.from(document.querySelectorAll('.box'))
+
+    lis.forEach((item,index) =>{
+        item.onclick = function(){
+            lis.forEach((li,ind) =>{
+                li.classList.remove('active')      
+                boxs[ind].classList.add('box')
+            })    
+            item.classList.add('active')
+            boxs[index].classList.remove('box')
+            boxs[index].classList.add('isShow')
+        }
+
+    })
+</script>
+</html>

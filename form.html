@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+</head>
+<body>
+    <fieldset>
+        <legend>表单</legend>
+        <form action="">
+            用户名：<input type="text">
+            <br>
+            密码：<input type="password" autofocus required tabindex="-1" autocomplete="false"> 
+            <!-- autofocus自动聚焦 tabindex切换优先 autocomplete自动完成 -->
+            <br>
+            邮箱：<input type="email">
+            <br>
+            颜色：<input type="color">
+            <br>
+            网址：<input type="url">
+            <br>
+            数字：<input type="number">
+            <br>
+            范围：<input type="range">
+            <br>
+            搜索：<input type="search">
+            <br>
+            电话：<input type="tel">
+            <br>
+            日期：<input type="date">
+            <br>
+            时间：<input type="time">
+            <br>
+            周数：<input type="week">
+            <br>
+            月：<input type="month">
+            <br>
+            城市：<input type="text" list="cites">
+            <datalist id="cites">
+                <option value="北京">北京1</option>
+                <option value="上海">上海2</option>
+                <option value="平顶山">平顶山3</option>
+            </datalist>
+            
+            <button>提交</button>
+        </form>
+        <input type="text" form="form">
+    </fieldset>
+    
+</body>
+
+</html>

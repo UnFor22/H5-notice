@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" data-sesc='huge'>
+        <span>姓名：胡歌</span>
+        <div>
+            描述：欧拉欧拉欧拉
+        </div>
+    </div>
+    <div class="box" data-sesc='lin'>
+        <span>姓名：林志玲</span>
+        <div>
+            描述：乌拉乌拉乌拉
+        </div>
+    </div>
+</body>
+<script>
+    let boxs = Array.from(document.querySelectorAll('.box'))
+    boxs.forEach(item =>{
+        item.onclick = function(){
+            alert(this.dataset.sesc)
+            alert(this.getAttribute('data-desc'))
+        }
+    })
+</script>
+</html>

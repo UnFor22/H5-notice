@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Document</title>
+</head>
+<style>
+    #video {
+        width: 400px;
+        height: 300px;
+    }
+</style>
+<body>
+    <!-- <video src="./10.mp4" 
+        controls 
+        preload="auto" 
+        muted 
+        poster="./login_banner.jpg" 
+        loop
+    >
+        <source src="./10.mp4">
+            您的浏览器不支持该格式
+    </video> -->
+    <!-- preload预加载 controls控制项 autoplay自动播放必须静音 muted静音 poster海报图  loop循环播放 浏览器可是不支持 用source-->
+    <video src="./10.mp4" id="video" controls ></video>
+    <button>播放</button>
+    <button>暂停</button>
+    <button>静音</button>
+    <button>1.5X</button>
+    <button>全屏</button>
+    <button>快进</button>
+</body>
+<script>
+    let video = document.getElementById('video')
+    let btns = document.getElementsByTagName('button')
+    console.dir(video)
+    btns[0].onclick = function(){
+        video.play()
+    }
+    btns[1].onclick = function(){
+        video.pause()
+    }
+    btns[2].onclick = function(){
+        video.muted = !video.muted
+        this.innerText = video.muted ? '解除静音' : '静音'
+    }
+    btns[3].onclick = function(){
+        video.playbackRate = 1.5
+    }
+    btns[4].onclick = function(){
+        video.webkitDisplayingFullscreen = true
+    }
+    btns[5].onclick = function(){
+        var currentTime = video.currentTime
+        video.currentTime = currentTime + 5
+    }
+</script>
+</html>
