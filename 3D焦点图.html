@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 500px;
+            height: 280px;
+            margin: 150px auto;
+            
+        }
+        .container ul {
+            /* transform-style: preserve-3d; */
+            position: relative;
+            perspective: 800px;
+            width: 500px;
+            height: 280px;
+        }
+        li {
+            transition: all 1s ease;
+            position: absolute;
+            list-style: none;
+            transform: translateZ(-400px)
+        }
+        img {
+            width: 500px;
+            height: 280px;
+            display: block;
+        }
+        .center {
+            z-index: 998;
+            /* display: none; */
+            transform: translateZ(-60px)
+        }
+        .left1 {
+            z-index: 996;
+            transform: rotateY(28deg) translateZ(-150px);
+        }
+        .left2 {
+            z-index: 994;
+            transform: rotateY(40deg) translateZ(-300px);
+        }
+        .right1 {
+            z-index: 996;
+            transform: rotateY(-28deg) translateZ(-150px);
+        }
+        .right2 {
+            z-index: 994;
+            transform: rotateY(-40deg) translateZ(-300px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li>
+                <img src="./images/3D焦点图/1.jpg" alt="">
+            </li>
+            <li>
+                <img src="./images/3D焦点图/2.jpg" alt="">
+            </li>
+            <li class="left2">
+                <img src="./images/3D焦点图/3.jpg" alt="">
+            </li>
+            <li class="left1">
+                <img src="./images/3D焦点图/4.jpg" alt="">
+            </li>
+            <li class="center">
+                <img src="./images/3D焦点图/5.jpg" alt="">
+            </li>
+            <li class="right1">
+                <img src="./images/3D焦点图/6.jpg" alt="">
+            </li>
+            <li class="right2">
+                <img src="./images/3D焦点图/7.jpg" alt="">
+            </li>
+            <li >
+                <img src="./images/3D焦点图/8.jpg" alt="">
+            </li>
+            <li >
+                <img src="./images/3D焦点图/9.jpg" alt="">
+            </li>
+        </ul>
+        <button>上一张</button>
+        <button>下一张</button>
+    </div>
+</body>
+<script>
+    let lis = document.querySelectorAll('li')
+    let btns = document.querySelectorAll('button')
+    let lock = false
+    let arr = ['','','left2','left1','center','right1','right2','','']
+    btns[0].onclick = function(){
+        if(!lock){
+            lock = true
+            setTimeout(()=>{
+                lock = false
+            },1000)
+            let first = arr.shift()
+            arr.push(first)
+            arr.forEach((item,index)=>{
+                lis[index].classList = item
+            })
+        }  
+    }
+    btns[1].onclick = function(){
+        if(!lock){
+            lock = true
+            setTimeout(()=>{
+                lock = false
+            },1000)
+            let last = arr.pop()
+            arr.unshift(last)
+            arr.forEach((item,index)=>{
+                lis[index].classList = item
+            })
+        }     
+    }
+</script>
+</html>

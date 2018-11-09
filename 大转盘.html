@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 50px auto;
+            position: relative;
+            width: 650px;
+            height: 650px;
+            background: url('./images/大转盘素材/turntable-bg.jpg') no-repeat;
+        }
+        .pan {
+            position: absolute;
+            top: 58px;
+            left: 116px;
+            width: 450px;
+            height: 450px;
+            background: url('./images/大转盘素材/turntable.png') no-repeat;
+            transition: transform 2s ease;
+        }
+        .zhen {
+            position: absolute;
+            top: 150px;
+            left: 254px;
+            width: 174px;
+            height: 230px;
+            background: url('./images/大转盘素材/pointer.png') no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pan">
+        </div>
+        <div class="zhen">
+        </div>
+    </div>
+</body>
+<script>
+    let pan = document.querySelector('.pan')
+    let zhen = document.querySelector('.zhen')
+    let deg = 0
+    zhen.onclick = function(){
+        let number = Math.round(Math.random()*7)      
+        deg += number *  Math.round(360 / 7)  + 720
+        pan.style.transform = `rotateZ(${deg}deg)` 
+    
+    }
+</script>
+</html>

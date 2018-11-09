@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: greenyellow;
+            transition: transform 2s;
+        }
+        .active {
+            transform: skewX(45deg);
+            transform: scale(4) 
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <button id="btn">动起来</button>
+</body>
+<script>
+    let box = document.querySelector('.box')
+    let btn = document.querySelector('#btn')
+    btn.onclick = function(){
+        // box.style = 'transform: translate3d(200px, 300px, 0) rotateZ(720deg) '
+        box.classList.add('active')
+    }
+</script>
+</html>

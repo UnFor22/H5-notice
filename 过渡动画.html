@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            background: yellowgreen;
+            width: 100px;
+            height: 100px;
+            /* transition: margin 2s; */
+
+            transition-property: margin;
+            transition-duration: 5s;
+            transition-delay: 2s; /* 延迟 */ 
+            transition-timing-function: linear;
+
+            transition: margin 2s ease, margin 1s linear;
+            will-change: margin;
+        }
+        /*
+            1.要有发生变化的属性
+            2.要有过渡动画的时间
+            3.要定义一个过渡动画 且这个属性和过渡动画定义的属性相对应
+        */
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <button id="btn">
+        懂
+    </button>
+</body>
+<script>
+    let box = document.querySelector('.box')
+    let btn = document.querySelector('#btn')
+    btn.onclick = function(){
+        box.style.marginLeft = '500px'
+        box.style.marginTop = '200px'
+    }
+    // setInterval(()=>{
+    //     box.style.marginLeft = box.offsetLeft + 5 + 'px'
+    // },1000/30)
+</script>
+</html>
